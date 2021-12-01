@@ -1,7 +1,7 @@
 import _ from 'lodash';
 import './style.css';
 
-const toDoListItems = [
+const toDoTasks = [
   {
     description: 'Study for Microverse',
     completed: false,
@@ -22,7 +22,7 @@ const toDoListItems = [
 function populateList() {
   const todoList = document.getElementById('item-list');
 
-  toDoListItems.forEach((item) => {
+  toDoTasks.forEach((item) => {
     const listItem = document.createElement('li');
     listItem.innerHTML = `
     <input class="checkbox" type="checkbox" name="" value="">

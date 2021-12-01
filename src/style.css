@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -32,7 +34,6 @@ body {
   min-width: 40%;
   max-width: 75%;
   margin: auto;
-  display: grid;
 }
  
 .list-title {
@@ -50,15 +51,19 @@ li {
 .add-task {
   padding: 15px;
   border-bottom: 1px solid #b5b5b5;
-  border: none;
   border: 1px solid black;
 }
 
 .clear {
   color: gray;
   font-size: 14px;
-  border: none;
   border-bottom: 1px solid #b5b5b5;
   border: none;
+}
+
+@supports (display: grid) {
+    .container {
+        display: grid;
+    }
 }
 
