@@ -1,4 +1,3 @@
-import _ from 'lodash';
 import './style.css';
 
 const toDoTasks = [
@@ -18,7 +17,7 @@ const toDoTasks = [
     index: 2,
   },
 ];
-  
+
 function populateList() {
   const todoList = document.getElementById('item-list');
 
@@ -31,6 +30,5 @@ function populateList() {
     todoList.appendChild(listItem);
   });
 }
-  
-populateList();
 
+populateList();
