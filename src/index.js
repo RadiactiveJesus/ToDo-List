@@ -1,13 +1,34 @@
-import _ from 'lodash';
 import './style.css';
 
-function component() {
-    const element = document.createElement('div');
+const toDoTasks = [
+  {
+    description: 'Study for Microverse',
+    completed: false,
+    index: 0,
+  },
+  {
+    description: 'Reading for College',
+    completed: false,
+    index: 1,
+  },
+  {
+    description: 'Clean the house',
+    completed: false,
+    index: 2,
+  },
+];
 
-    // Lodash, now imported by this script
-    element.innerHTML = _.join(['Hello', 'webpack'], ' ');
+function populateList() {
+  const todoList = document.getElementById('item-list');
 
-    return element;
+  toDoTasks.forEach((item) => {
+    const listItem = document.createElement('li');
+    listItem.innerHTML = `
+    <input class="checkbox" type="checkbox" name="" value="">
+    <span>${item.description}</span>
+    `;
+    todoList.appendChild(listItem);
+  });
 }
 
-document.body.appendChild(component());
+populateList();
