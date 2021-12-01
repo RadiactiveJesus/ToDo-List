@@ -44,6 +44,11 @@ git clone git@github.com:RadiactiveJesus/ToDo-List.git
 ```bash
 npm install
 ```
+Inorder to bundle the app, is probable you need to install yarn first
+
+```bash
+yarn install
+```
 
 To run StyleLint by itself, you may run the lint task:
 
@@ -61,6 +66,26 @@ You can also check against Webhint:
 
 ```bash
 npx hint --telemetry=off .
+```
+
+### Usage
+Run `npm run build` to bundle automatically some necesary dependencies of the profect.
+
+```
+npm run build
+```
+
+Run `npm run start` to start the local server and try the app.
+
+```
+npm run start
+```
+
+### Run locally
+Open dist/index.html in live server from the command line on root folder
+
+```
+npm run start
 ```
 
   ## 👤 **Rodolfo**
