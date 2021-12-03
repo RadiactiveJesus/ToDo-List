@@ -1,5 +1,5 @@
 import './style.css';
-import ToDoList from './todoList';
+import ToDoList from './todoList.js';
 
 function populateList() {
   const todoList = document.getElementById('item-list');
@@ -29,12 +29,12 @@ if (list) {
 
 populateList();
 
-const listCheckboxes = [...document.getElementsByClassName('checkbox')]
+const listCheckboxes = [...document.getElementsByClassName('checkbox')];
 listCheckboxes.forEach((element) => {
   element.addEventListener('change', () => {
     const index = parseInt(element.id, 10);
-    ToDoList.list[index].update()
-    element.nextElementSibling.classList.toggle('complete')
-    localStorage.setItem('todoList', JSON.stringify(ToDoList.list))
-  })
-})
+    ToDoList.list[index].update();
+    element.nextElementSibling.classList.toggle('complete');
+    localStorage.setItem('todoList', JSON.stringify(ToDoList.list));
+  });
+});
