@@ -1,4 +1,9 @@
 import './style.css';
+import {ToDoList} from './todoList.js'
+
+const item1 = new ToDoList('Study for Microverse')
+const item2 = new ToDoList('Reading for College')
+const item3 = new ToDoList('Clean the House')
 
 const toDoTasks = [
   {
@@ -12,7 +17,7 @@ const toDoTasks = [
     index: 1,
   },
   {
-    description: 'Clean the house',
+    description: 'Clean the House',
     completed: false,
     index: 2,
   },
@@ -21,10 +26,10 @@ const toDoTasks = [
 function populateList() {
   const todoList = document.getElementById('item-list');
 
-  toDoTasks.forEach((item) => {
+  ToDoList.list.forEach((item) => {
     const listItem = document.createElement('li');
     listItem.innerHTML = `
-    <input class="checkbox" type="checkbox" name="" value="">
+    <input id="${item.index}" class="checkbox" type="checkbox" name="" value="">
     <span>${item.description}</span>
     `;
     todoList.appendChild(listItem);
@@ -32,3 +37,12 @@ function populateList() {
 }
 
 populateList();
+
+const listCheckboxes = [...document.getElementsByClassName('checkbox')]
+listCheckboxes.forEach((element) => {
+  element.addEventListener('change', () => {
+    const index = parseInt(element.id)
+    ToDoList.list[index].update()
+    element.nextElementSibling.classList.toggle('complete')
+  })
+})

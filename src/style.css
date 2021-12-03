@@ -134,3 +134,8 @@ li {
     display: grid;
   }
 }
+
+.complete {
+  text-decoration: line-through;
+  color: grey;
+}
