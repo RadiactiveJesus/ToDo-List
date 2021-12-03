@@ -3,7 +3,7 @@ import {ToDoList} from './todoList.js'
 
 const item1 = new ToDoList('Study for Microverse')
 const item2 = new ToDoList('Reading for College')
-const item3 = new ToDoList('Clean the House')
+const item3 = new ToDoList('Clean the house')
 
 const toDoTasks = [
   {
@@ -17,7 +17,7 @@ const toDoTasks = [
     index: 1,
   },
   {
-    description: 'Clean the House',
+    description: 'Clean the house',
     completed: false,
     index: 2,
   },
