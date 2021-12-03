@@ -1,6 +1,8 @@
 import './style.css';
 import ToDoList from './todoList.js';
 
+const defaultList = ['Study for Microverse', 'Reading for College', 'Clean the house'];
+
 function populateList() {
   const todoList = document.getElementById('item-list');
 
@@ -22,9 +24,7 @@ const list = JSON.parse(localStorage.getItem('todoList'));
 if (list) {
   list.forEach((item) => new ToDoList(item.description, item.complete));
 } else {
-  ToDoList('Study for Microverse');
-  ToDoList('Reading for College');
-  ToDoList('Clean the house');
+  defaultList.forEach((item) => new ToDoList(item, false));
 }
 
 populateList();
