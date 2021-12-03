@@ -1,27 +1,5 @@
 import './style.css';
-import {ToDoList} from './todoList.js'
-
-const item1 = new ToDoList('Study for Microverse')
-const item2 = new ToDoList('Reading for College')
-const item3 = new ToDoList('Clean the house')
-
-const toDoTasks = [
-  {
-    description: 'Study for Microverse',
-    completed: false,
-    index: 0,
-  },
-  {
-    description: 'Reading for College',
-    completed: false,
-    index: 1,
-  },
-  {
-    description: 'Clean the house',
-    completed: false,
-    index: 2,
-  },
-];
+import ToDoList from './todoList';
 
 function populateList() {
   const todoList = document.getElementById('item-list');
@@ -29,11 +7,24 @@ function populateList() {
   ToDoList.list.forEach((item) => {
     const listItem = document.createElement('li');
     listItem.innerHTML = `
-    <input id="${item.index}" class="checkbox" type="checkbox" name="" value="">
+    <input id="${item.index}" class="checkbox" type="checkbox">
     <span>${item.description}</span>
     `;
     todoList.appendChild(listItem);
+    if (item.complete) {
+      listItem.querySelector('input').checked = true;
+      listItem.querySelector('span').classList = 'complete';
+    }
   });
+}
+
+const list = JSON.parse(localStorage.getItem('todoList'));
+if (list) {
+  list.forEach((item) => new ToDoList(item.description, item.complete));
+} else {
+  ToDoList('Study for Microverse');
+  ToDoList('Reading for College');
+  ToDoList('Clean the house');
 }
 
 populateList();
@@ -41,8 +32,9 @@ populateList();
 const listCheckboxes = [...document.getElementsByClassName('checkbox')]
 listCheckboxes.forEach((element) => {
   element.addEventListener('change', () => {
-    const index = parseInt(element.id)
+    const index = parseInt(element.id, 10);
     ToDoList.list[index].update()
     element.nextElementSibling.classList.toggle('complete')
+    localStorage.setItem('todoList', JSON.stringify(ToDoList.list))
   })
 })

@@ -1,9 +1,9 @@
-export class ToDoList {
+export default class ToDoList {
   static list = []
   
-  constructor(description) {
+  constructor(description, complete = false) {
     this.description = description,
-    this.complete = false,
+    this.complete = complete,
     this.index = ToDoList.list.length
     ToDoList.list.push(this)
   }
