@@ -1,7 +1,7 @@
 import './style.css';
 import ToDoList from './todoList.js';
 
-const defaultList = ['Study for Microverse', 'Reading for College', 'Clean the house'];
+const defaultList = ['Study for Microverse', 'Reading for College', 'Clean the House'];
 
 function populateList() {
   const todoList = document.getElementById('item-list');

@@ -1,5 +1,5 @@
 export default class ToDoList {
-  static list = []
+  static list = [];
 
   constructor(description, complete = false) {
     this.description = description;
