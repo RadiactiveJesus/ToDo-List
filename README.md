@@ -6,7 +6,7 @@
 
 
 ### ScreenShoot
-![screenshot](./image/Milestone1.png)
+![screenshot](./image/Milestone2.png)
 
 
 ## Built With
